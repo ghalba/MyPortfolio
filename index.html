@@ -1,9 +1,12 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Name | Portfolio</title>
+  <!-- Custom Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -12,6 +15,7 @@
       <a href="#">Home</a>
       <a href="#projects">Projects</a>
       <a href="#about">About</a>
+      <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -28,7 +32,7 @@
     <div class="project-grid">
       <!-- Repeat .project-card for each project -->
       <div class="project-card">
-        <img src="images/project1.jpg" alt="Project 1" />
+        <img src="images/project1.png" alt="Project 1" />
         <h3>Project Title</h3>
         <p>Short description of this project.</p>
         <a href="#" class="btn">View Details</a>
@@ -38,7 +42,22 @@
 
   <section id="about" class="about">
     <h2>About Me</h2>
-    <p>Write a brief introduction about yourself, your skills, and passions.</p>
+    <div class="about-content">
+      <img src="images/profile.jpg" alt="Your Name" class="profile-pic" />
+      <p>Write a brief introduction about yourself, your skills, and passions.</p>
+    </div>
+  </section>
+
+  <section id="experience" class="experience">
+    <h2>Work Experience</h2>
+    <div class="experience-list">
+      <div class="experience-item">
+        <h3>Position Title - Company Name</h3>
+        <span class="date-range">June 2023 - Present</span>
+        <p>Describe your role, responsibilities, and achievements.</p>
+      </div>
+      <!-- Repeat .experience-item as needed -->
+    </div>
   </section>
 
   <section id="contact" class="contact">

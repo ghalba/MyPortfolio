@@ -1,6 +1,7 @@
 // js/script.js
-// (Optional) Add interactivity: smooth scrolling, menu toggle for mobile, etc.
+// (Optional) Smooth scrolling and mobile nav toggle
 
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
