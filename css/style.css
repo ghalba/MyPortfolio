@@ -1,68 +1,43 @@
 /* css/style.css */
-/* Basic Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
-  color: #fff;
-  background-color: #000;
+font-family: 'Roboto', sans-serif;
+color: #fff;
+background-color: #000;
 }
-a { color: inherit; text-decoration: none; }
 .site-header {
-  background: #111;
-  padding: 1rem;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  z-index: 10;
+background: #111;
+padding: 1rem;
+position: fixed;
+width: 100%;
+top: 0; z-index: 10;
 }
-.nav { display: flex; gap: 1rem; justify-content: center; }
+.header-container {
+position: relative;
+max-width: 1200px;
+margin: 0 auto;
+}
+.site-title {
+position: absolute;
+left: 1rem;
+top: 50%;
+transform: translateY(-50%);
+font-weight: 700;
+font-size: 1.2rem;
+}
+.nav {
+margin: 0 auto;
+display: flex; gap: 1rem;
+}
 .hero {
-  height: 60vh;               /* Reduced height */
-  background-color: #111;
-  background-image: url('../images/hero-bg.png');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+height: 50vh;
+background-color: #777;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 72px;
 }
 .hero-content {
-  text-align: center;
-  background: rgba(0,0,0,0.6);
-  padding: 2rem;
-  border-radius: 8px;
+text-align: center;
+padding: 2rem;
 }
-.projects, .about, .experience, .contact {
-  padding: 4rem 2rem;
-  max-width: 1000px;
-  margin: auto;
-}
-.project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem; }
-.project-card {
-  background: #111;
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.project-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-.project-card .btn { display: inline-block; margin: 1rem; padding: 0.5rem 1rem; border: 1px solid #fff; border-radius: 4px; }
-.about-content { display: flex; align-items: center; gap: 2rem; }
-.profile-pic {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #fff;
-}
-.experience-list { display: flex; flex-direction: column; gap: 2rem; }
-.experience-item { background: #111; padding: 1.5rem; border-radius: 8px; }
-.experience-item .date-range { font-style: italic; font-size: 0.9rem; }
-.site-footer { text-align: center; padding: 2rem; background: #111; }
