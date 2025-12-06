@@ -1,43 +1,131 @@
-/* css/style.css */
+/* css/style.css - fixed & improved */
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --header-height: 72px; /* change if you want a different header size */
+  --max-width: 1200px;
+  --bg-dark: #000;
+  --panel-dark: #111;
+  --hero-gray: #777;
+  --white: #fff;
+}
+
+html, body { height: 100%; }
+
 body {
-font-family: 'Roboto', sans-serif;
-color: #fff;
-background-color: #000;
+  font-family: 'Roboto', sans-serif;
+  color: var(--white);
+  background-color: var(--bg-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Header */
 .site-header {
-background: #111;
-padding: 1rem;
-position: fixed;
-width: 100%;
-top: 0; z-index: 10;
+  background: var(--panel-dark);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
+
+/* container centers nav while allowing absolute left title */
 .header-container {
-position: relative;
-max-width: 1200px;
-margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* keeps nav centered */
+  position: relative;
+  height: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
 }
+
+/* site title pinned to left inside header */
 .site-title {
-position: absolute;
-left: 1rem;
-top: 50%;
-transform: translateY(-50%);
-font-weight: 700;
-font-size: 1.2rem;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 700;
+  font-size: 1.05rem;
+  white-space: nowrap;
 }
+
+/* nav sits centered due to header-container's justify-content:center */
 .nav {
-margin: 0 auto;
-display: flex; gap: 1rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: center;
 }
+
+/* make nav links slightly larger and accessible */
+.nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.35rem 0.25rem;
+}
+
+/* ensure main content is not hidden behind fixed header */
+main {
+  padding-top: calc(var(--header-height) + 1rem);
+}
+
+/* HERO */
 .hero {
-height: 50vh;
-background-color: #777;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-top: 72px;
+  height: 45vh; /* reduced height */
+  background-color: var(--hero-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* No margin-top needed anymore — header is accounted for by main padding */
 }
+
 .hero-content {
-text-align: center;
-padding: 2rem;
+  text-align: center;
+  padding: 2rem;
+  max-width: 900px;
 }
+
+/* small responsive tweaks */
+@media (max-width: 800px) {
+  .nav { gap: 0.6rem; font-size: 0.95rem; }
+  .site-title { font-size: 1rem; left: 0.8rem; }
+  .hero { height: 38vh; }
+  main { padding-top: calc(var(--header-height) + 0.5rem); }
+}
+
+/* helpful defaults for other sections (keeps layout stable) */
+.projects, .about, .experience, .contact {
+  padding: 3rem 1.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  gap: 1.25rem;
+}
+.project-card {
+  background: var(--panel-dark);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* small polish */
+.profile-pic { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid var(--white); }
+.site-footer { text-align: center; padding: 2rem; background: var(--panel-dark); margin-top: 2rem; color: var(--white); }
